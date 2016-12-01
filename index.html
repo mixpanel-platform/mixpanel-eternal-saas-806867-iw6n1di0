@@ -25,7 +25,8 @@
         from_date:'2016-11-02',
         to_date:'2016-12-01',
         limit:200,
-        interval:30
+        interval:30,
+        on: 'properties["Campaign Source"]'
       }
       MP.api.query('/api/2.0/funnels', params).done(function(results){
         console.log(results);

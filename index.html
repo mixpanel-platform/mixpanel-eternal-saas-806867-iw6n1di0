@@ -28,7 +28,7 @@
         limit:1500,
         event:'Complete Chat'
       }
-      MP.api.query('/api/2.0/events/properties/names/', params).done(function(results){
+      MP.api.query('/api/2.0/events/properties/names', params).done(function(results){
         console.log(results);
       });
     </script>

@@ -16,9 +16,9 @@
         to_date:'2016-12-01',
         limit:200,
         interval:30,
-        segment: 'properties["Campaign Source"]'
+        segment: 'Campaign Source'
       }
-      MP.api.funnel('View Trial Page', 'Sign up for Trial').done(function(results) {
+      MP.api.funnel('View Trial Page', 'Sign up for Trial', params).done(function(results) {
         var funnel_return = [];
         for(var step = 0; step < results.length; step++){
           funnel_return[step] = 0;

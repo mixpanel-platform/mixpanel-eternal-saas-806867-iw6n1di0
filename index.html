@@ -10,7 +10,13 @@
     <h1>Hello, World!</h1>
     <script>
       MP.api.funnel('View Trial Page', 'Sign up for Trial').done(function(results) {
-        console.log(results);
+        var funnel_return = [];
+        for(var step = 0; step < results.length; step++){
+          _.each(step[0], function(date_obj){
+            funnel_return[step] += date_obj.count;
+          });
+        }
+        console.log(funnel_return);
       });
     </script>
   </body>

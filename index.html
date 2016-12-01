@@ -9,16 +9,25 @@
   <body class="mixpanel-platform-body">
     <h1>Hello, World!</h1>
     <script>
-      MP.api.funnel('View Trial Page', 'Sign up for Trial').done(function(results) {
-        var funnel_return = [];
-        for(var step = 0; step < results.length; step++){
-          funnel_return[step] = 0;
-          _.each(results[step], function(date_obj){
-            funnel_return[step] += date_obj.count;
-          });
-        }
-        console.log(funnel_return);
-        console.log(results);
+      // MP.api.funnel('View Trial Page', 'Sign up for Trial').done(function(results) {
+      //   var funnel_return = [];
+      //   for(var step = 0; step < results.length; step++){
+      //     funnel_return[step] = 0;
+      //     _.each(results[step], function(date_obj){
+      //       funnel_return[step] += date_obj.count;
+      //     });
+      //   }
+      //   console.log(funnel_return);
+      //   console.log(results);
+      // });
+      var params = {funnel_id:1936953
+        from_date:'2016-11-02',
+        to_date:'2016-12-01',
+        limit:200,
+        interval:30
+      }
+      MP.api.query('/api/2.0/funnels', params).done(function(results){
+        console.log(params);
       });
     </script>
   </body>

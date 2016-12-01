@@ -10,28 +10,25 @@
     <h1>Hello, World!</h1>
     <script>
     
-      // Option 1
-      var params = {
-        from_date:'2016-11-02',
-        to_date:'2016-12-01',
-        limit:200,
-        interval:30,
-        segment: 'Campaign Source'
-      }
-      MP.api.funnel('View Trial Page', 'Sign up for Trial', params).done(function(results) {
-        console.log(results);
-      });
+      // // Option 1
+      // var params = {
+      //   from_date:'2016-11-02',
+      //   to_date:'2016-12-01',
+      //   limit:200,
+      //   interval:30,
+      //   segment: 'Campaign Source'
+      // }
+      // MP.api.funnel('View Trial Page', 'Sign up for Trial', params).done(function(results) {
+      //   console.log(results);
+      // });
       
       // Option 2 
       var params = {
-        funnel_id:1936953,
-        from_date:'2016-11-02',
-        to_date:'2016-12-01',
-        limit:200,
-        interval:30,
-        on: 'properties["Campaign Source"]'
+        type:'general',
+limit:1500,
+event:'Complete Chat'
       }
-      MP.api.query('/api/2.0/funnels', params).done(function(results){
+      MP.api.query('api/2.0/events/properties', params).done(function(results){
         console.log(results);
       });
     </script>

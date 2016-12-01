@@ -12,6 +12,7 @@
       MP.api.funnel('View Trial Page', 'Sign up for Trial').done(function(results) {
         var funnel_return = [];
         for(var step = 0; step < results.length; step++){
+          console.log('here');
           _.each(step[0], function(date_obj){
             funnel_return[step] += date_obj.count;
           });
